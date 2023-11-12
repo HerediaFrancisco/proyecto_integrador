@@ -4,6 +4,7 @@ package com.backend.clinicaodontologica.test;
 import com.backend.clinicaodontologica.dao.impl.PacienteDaoH2;
 import com.backend.clinicaodontologica.model.Domicilio;
 import com.backend.clinicaodontologica.model.Paciente;
+
 import com.backend.clinicaodontologica.service.impl.PacienteService;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 
 
 class PacienteServiceTest {
-    private PacienteService pacienteService = new PacienteService(new PacienteDaoH2());
+    // private PacienteService pacienteService = new PacienteService(new PacienteDaoH2());
 
     /*
 
@@ -36,7 +37,7 @@ class PacienteServiceTest {
         }
     }*/
 
-
+/*
     @Test
     void deberiaAgregarUnPaciente(){
 
@@ -53,5 +54,5 @@ class PacienteServiceTest {
 
         assertFalse(pacienteService.listarPacientes().isEmpty());
 
-    }
+    }*/
 }

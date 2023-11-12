@@ -18,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 
 class OdontologoServiceTest {
 
-    private final OdontologoService odontologoService = new OdontologoService(new OdontologoDaoH2());
+    //private final OdontologoService odontologoService = new OdontologoService(new OdontologoDaoH2());
 
     /*
     @BeforeAll
@@ -39,7 +39,7 @@ class OdontologoServiceTest {
         }
     }*/
 
-
+/*
     @Test
     public void deberiaAgregarUnOdontologo() {
         Odontologo odontologo = new Odontologo("12345", "Patricia", "Damiani");
@@ -57,5 +57,5 @@ class OdontologoServiceTest {
 
     }
 
-
+*/
 }

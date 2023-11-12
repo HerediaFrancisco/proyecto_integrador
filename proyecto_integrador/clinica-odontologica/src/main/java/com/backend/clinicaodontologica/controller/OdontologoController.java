@@ -1,8 +1,15 @@
 package com.backend.clinicaodontologica.controller;
 
-import com.backend.clinicaodontologica.model.Odontologo;
+
+import com.backend.clinicaodontologica.dto.entrada.paciente.OdontologoEntradaDto;
+import com.backend.clinicaodontologica.dto.salida.paciente.OdontologoSalidaDto;
 import com.backend.clinicaodontologica.service.IOdontologoService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/odontologos")
@@ -13,9 +20,19 @@ public class OdontologoController {
         this.odontologoService = odontologoService;
     }
 
-    @GetMapping("/{id}")
-    public Odontologo buscarOdontologoPorId(@PathVariable int id){
-        return odontologoService.buscarOdontologoPorId(id);
+    @PostMapping("/registrar")
+    public ResponseEntity<OdontologoSalidaDto> guardarOdontologo(@RequestBody @Valid OdontologoEntradaDto odontologo){
+        return new ResponseEntity<>(odontologoService.guardarOdontologo(odontologo), HttpStatus.CREATED);
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<OdontologoSalidaDto> buscarOdontologoPorId(@PathVariable int id){
+        return new ResponseEntity<>(odontologoService.buscarOdontologoPorId(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/listar")
+    public ResponseEntity<List<OdontologoSalidaDto>> listarOdontologos(){
+        return new ResponseEntity<>(odontologoService.listarOdontologos(), HttpStatus.OK);
     }
 
 }

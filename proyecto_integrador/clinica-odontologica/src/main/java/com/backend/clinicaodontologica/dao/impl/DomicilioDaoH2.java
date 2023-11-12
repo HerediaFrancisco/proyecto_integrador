@@ -3,7 +3,6 @@ package com.backend.clinicaodontologica.dao.impl;
 import com.backend.clinicaodontologica.dao.H2Connection;
 import com.backend.clinicaodontologica.dao.IDao;
 import com.backend.clinicaodontologica.model.Domicilio;
-import com.backend.clinicaodontologica.model.Odontologo;
 import com.backend.clinicaodontologica.model.Paciente;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -15,18 +15,18 @@ public class TurnoEntradaDto {
     private LocalDateTime fechaYHora;
     @NotNull(message = "El turno debe tener un Odontologo asignado")
     @Valid
-    private Long odontologo_id;
+    private Long odontologo;
     @NotNull(message = "El turno debe tener un Paciente")
     @Valid
-    private Long paciente_id;
+    private Long paciente;
 
     public TurnoEntradaDto() {
     }
 
-    public TurnoEntradaDto(LocalDateTime fechaYHora, Long odontologo_id, Long paciente_id) {
+    public TurnoEntradaDto(LocalDateTime fechaYHora, Long odontologo, Long paciente) {
         this.fechaYHora = fechaYHora;
-        this.odontologo_id = odontologo_id;
-        this.paciente_id = paciente_id;
+        this.odontologo = odontologo;
+        this.paciente = paciente;
     }
 
     public LocalDateTime getFechaYHora() {
@@ -37,19 +37,19 @@ public class TurnoEntradaDto {
         this.fechaYHora = fechaYHora;
     }
 
-    public Long getOdontologo_id() {
-        return odontologo_id;
+    public Long getOdontologo() {
+        return odontologo;
     }
 
-    public void setOdontologo_id(Long odontologo_id) {
-        this.odontologo_id = odontologo_id;
+    public void setOdontologo(Long odontologo) {
+        this.odontologo = odontologo;
     }
 
-    public Long getPaciente_id() {
-        return paciente_id;
+    public Long getPaciente() {
+        return paciente;
     }
 
-    public void setPaciente_id(Long paciente_id) {
-        this.paciente_id = paciente_id;
+    public void setPaciente(Long paciente) {
+        this.paciente = paciente;
     }
 }

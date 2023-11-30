@@ -17,7 +17,7 @@ import java.util.List;
 
 @Service
 public class OdontologoService implements IOdontologoService {
-    private final Logger LOGGER = LoggerFactory.getLogger(PacienteService.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(OdontologoService.class);
     private OdontologoRepository odontologoRepository;
     private ModelMapper modelMapper;
 
@@ -31,11 +31,13 @@ public class OdontologoService implements IOdontologoService {
     @Override
     public OdontologoSalidaDto guardarOdontologo(OdontologoEntradaDto odontologo) {
 
+        LOGGER.info("OdontologoEtradaDto: " + JsonPrinter.toString(odontologo));
         Odontologo odontologoEntidad = modelMapper.map(odontologo, Odontologo.class);
 
         Odontologo odontologoAPersistir = odontologoRepository.save(odontologoEntidad);
 
         OdontologoSalidaDto odontologoSalidaDto = modelMapper.map(odontologoAPersistir, OdontologoSalidaDto.class);
+        LOGGER.info("OdontologoSalidaDto: " + JsonPrinter.toString(odontologoSalidaDto));
 
         return odontologoSalidaDto;
     }
@@ -46,7 +48,7 @@ public class OdontologoService implements IOdontologoService {
                 .stream()
                 .map(odontologo -> modelMapper.map(odontologo, OdontologoSalidaDto.class)).toList();
         if (LOGGER.isInfoEnabled())
-            LOGGER.info("Listado de todos los pacientes: {}", JsonPrinter.toString(odontologoSalidaDto));
+            LOGGER.info("Listado de todos los odontologos: {}", JsonPrinter.toString(odontologoSalidaDto));
 
         return odontologoSalidaDto;
     }
@@ -58,6 +60,7 @@ public class OdontologoService implements IOdontologoService {
 
         if(odontologoBuscado != null){
             odontologoEncontrado = modelMapper.map(odontologoBuscado, OdontologoSalidaDto.class);
+            LOGGER.info("Odontologo encontrado: {}", JsonPrinter.toString(odontologoEncontrado));
         }else{
             LOGGER.error("El id no se encuentra registrado en la base de datos");
         }

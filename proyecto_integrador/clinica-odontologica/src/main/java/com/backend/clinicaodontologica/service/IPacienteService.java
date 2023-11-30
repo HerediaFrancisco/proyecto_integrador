@@ -19,5 +19,5 @@ public interface IPacienteService {
 
     void eliminarPaciente(Long id) throws ResourceNotFoundException;
 
-    PacienteSalidaDto buscarPacientePorDni(int dni);
+
 }

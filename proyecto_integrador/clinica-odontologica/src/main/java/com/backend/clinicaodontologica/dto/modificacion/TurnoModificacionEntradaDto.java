@@ -19,21 +19,21 @@ public class TurnoModificacionEntradaDto {
     @NotNull(message = "Debe especificarse la fecha y hora del turno")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime fechaYHora;
-    @NotNull(message = "El Odontologo no puede ser nulo")
+    @NotNull(message = "El turno debe tener un Odontologo asignado")
     @Valid
-    private OdontologoEntradaDto odontologoEntradaDto;
-    @NotNull(message = "El Paciente no puede ser nulo")
+    private Long odontologo;
+    @NotNull(message = "El turno debe tener un Paciente")
     @Valid
-    private PacienteEntradaDto pacienteEntradaDto;
+    private Long paciente;
 
     public TurnoModificacionEntradaDto() {
     }
 
-    public TurnoModificacionEntradaDto(Long id, LocalDateTime fechaYHora, OdontologoEntradaDto odontologoEntradaDto, PacienteEntradaDto pacienteEntradaDto) {
+    public TurnoModificacionEntradaDto(Long id, LocalDateTime fechaYHora, Long odontologo, Long paciente) {
         this.id = id;
         this.fechaYHora = fechaYHora;
-        this.odontologoEntradaDto = odontologoEntradaDto;
-        this.pacienteEntradaDto = pacienteEntradaDto;
+        this.odontologo = odontologo;
+        this.paciente = paciente;
     }
 
     public Long getId() {
@@ -52,19 +52,19 @@ public class TurnoModificacionEntradaDto {
         this.fechaYHora = fechaYHora;
     }
 
-    public OdontologoEntradaDto getOdontologoEntradaDto() {
-        return odontologoEntradaDto;
+    public Long getOdontologo() {
+        return odontologo;
     }
 
-    public void setOdontologoEntradaDto(OdontologoEntradaDto odontologoEntradaDto) {
-        this.odontologoEntradaDto = odontologoEntradaDto;
+    public void setOdontologo(Long odontologo) {
+        this.odontologo = odontologo;
     }
 
-    public PacienteEntradaDto getPacienteEntradaDto() {
-        return pacienteEntradaDto;
+    public Long getPaciente() {
+        return paciente;
     }
 
-    public void setPacienteEntradaDto(PacienteEntradaDto pacienteEntradaDto) {
-        this.pacienteEntradaDto = pacienteEntradaDto;
+    public void setPaciente(Long paciente) {
+        this.paciente = paciente;
     }
 }

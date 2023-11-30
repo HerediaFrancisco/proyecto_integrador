@@ -1,0 +1,19 @@
+* {
+     margin: 2px;
+     padding-left: 6px;
+}
+body {
+     margin: 2px;
+     padding-left: 6px;
+}
+
+.row {
+    margin: 2px;
+    padding-left: 6px;
+}
+.row {
+    width: auto;
+}
+.table-responsive {
+    overflow-x: hidden;
+}

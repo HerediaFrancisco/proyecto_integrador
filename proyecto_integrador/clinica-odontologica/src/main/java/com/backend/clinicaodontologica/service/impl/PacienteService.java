@@ -1,7 +1,6 @@
 package com.backend.clinicaodontologica.service.impl;
 
 
-
 import com.backend.clinicaodontologica.Repository.PacienteRepository;
 import com.backend.clinicaodontologica.dto.entrada.paciente.PacienteEntradaDto;
 import com.backend.clinicaodontologica.dto.modificacion.PacienteModificacionEntradaDto;
@@ -37,13 +36,14 @@ public class PacienteService implements IPacienteService {
 
     public PacienteSalidaDto registrarPaciente(PacienteEntradaDto paciente) throws MethodArgumentNotValidException {
 
-        //convertimos mediante el mapper de dtoEntrada a entidad
+
+
         LOGGER.info("PacienteEntradaDto: " + JsonPrinter.toString(paciente));
         Paciente pacienteEntidad = modelMapper.map(paciente, Paciente.class);
 
-        //mandamos a persistir a la capa dao y obtenemos una entidad
+
         Paciente pacienteAPersistir = pacienteRepository.save(pacienteEntidad);
-        //transformamos la entidad obtenida en salidaDto
+
         PacienteSalidaDto pacienteSalidaDto = modelMapper.map(pacienteAPersistir, PacienteSalidaDto.class);
         LOGGER.info("PacienteSalidaDto: " + JsonPrinter.toString(pacienteSalidaDto));
 
@@ -109,10 +109,7 @@ public class PacienteService implements IPacienteService {
 
     }
 
-    @Override
-    public PacienteSalidaDto buscarPacientePorDni(int dni) {
-        return modelMapper.map(pacienteRepository.findByDni(dni), PacienteSalidaDto.class);
-    }
+
 
 
     private void configureMapping() {

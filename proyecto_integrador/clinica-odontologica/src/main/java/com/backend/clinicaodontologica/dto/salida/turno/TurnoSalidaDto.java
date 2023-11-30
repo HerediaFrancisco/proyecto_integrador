@@ -7,17 +7,16 @@ import java.time.LocalDateTime;
 public class TurnoSalidaDto {
     private Long id;
     private LocalDateTime fechaYHora;
-    private Long odontologo_id;
-    private Long paciente_id;
-
+    private Long odontologo;
+    private Long paciente;
     public TurnoSalidaDto() {
     }
 
-    public TurnoSalidaDto(Long id, LocalDateTime fechaYHora, Long odontologo_id, Long paciente_id) {
+    public TurnoSalidaDto(Long id, LocalDateTime fechaYHora, Long odontologo, Long paciente) {
         this.id = id;
         this.fechaYHora = fechaYHora;
-        this.odontologo_id = odontologo_id;
-        this.paciente_id = paciente_id;
+        this.odontologo = odontologo;
+        this.paciente = paciente;
     }
 
     public Long getId() {
@@ -36,19 +35,19 @@ public class TurnoSalidaDto {
         this.fechaYHora = fechaYHora;
     }
 
-    public Long getOdontologo_id() {
-        return odontologo_id;
+    public Long getOdontologo() {
+        return odontologo;
     }
 
-    public void setOdontologo_id(Long odontologo_id) {
-        this.odontologo_id = odontologo_id;
+    public void setOdontologo(Long odontologo) {
+        this.odontologo = odontologo;
     }
 
-    public Long getPaciente_id() {
-        return paciente_id;
+    public Long getPaciente() {
+        return paciente;
     }
 
-    public void setPaciente_id(Long paciente_id) {
-        this.paciente_id = paciente_id;
+    public void setPaciente(Long paciente) {
+        this.paciente = paciente;
     }
 }
